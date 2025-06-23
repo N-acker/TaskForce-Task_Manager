@@ -1,0 +1,70 @@
+<div class="container mt-4" >
+ 
+<div class="card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Task Manager</h1>
+            <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+        </div>
+        
+<form>
+    <div class="form-group">
+      <label>Task</label>
+      <input type="text" [(ngModel)]="task" [ngModelOptions]="{standalone: true}"  class="form-control" id="task" placeholder="Enter Task">
+ 
+    </div>
+ 
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}"  class="form-control" id="description" placeholder="Enter Description">
+  
+      </div>
+ 
+      <div class="form-group">
+        <label>Due Date</label>
+        <input type="date" [(ngModel)]="dueDate" [ngModelOptions]="{standalone: true}" class="form-control" id="duedate" placeholder="Enter Due Date">
+  
+      </div>
+    
+    <button type="submit" class="btn btn-primary mt-4" (click)="save()" >Submit</button>
+  </form>
+</div>
+<div>
+ 
+ 
+    <div class="container mt-4" >
+ 
+        <h1>Tasks:</h1>
+ 
+ 
+ 
+    <table class="table">
+        <thead>
+         <h1 *ngIf="!isResultLoaded">Loading.................</h1>
+        
+        <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Description</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let TaskItem of taskArray">
+ 
+            <td>{{TaskItem.task_name}}</td>
+            <td>{{TaskItem.description}}</td>
+            <td>{{TaskItem.due_date}}</td>
+ 
+            <td>
+              <button type="button" class="btn btn-success" (click)="setUpdate(TaskItem)">Edit</button>
+              
+              <button type="button" class="btn btn-danger" (click)="setDelete(TaskItem)">Delete</button>
+            
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+ 
+ 
+    </div>
