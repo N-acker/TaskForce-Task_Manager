@@ -47,7 +47,6 @@ A full-stack task management web app built with Angular and Laravel. Users can r
 
 ### 🔙 Backend Setup (Laravel)
 
-```bash
 # 1. Navigate to the backend folder
 cd backend
 
@@ -87,7 +86,6 @@ php artisan serve
 
 ### 🎨 Frontend Setup
 
-```bash
 # 1. Go to the frontend folder
 cd frontend
 
