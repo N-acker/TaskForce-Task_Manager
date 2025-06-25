@@ -48,18 +48,17 @@ A full-stack task management web app built with Angular and Laravel. Users can r
 
 
 ### 🔙 Backend Setup (Laravel)
-
- #### 1. Navigate to the backend folder
+```bash
+ 1. Navigate to the backend folder
  cd backend
  
- #### 2. Install dependencies
+ 2. Install dependencies
  composer install
  
- #### 3. Copy and configure environment variables
+ 3. Copy and configure environment variables
  cp .env.example .env
  
- 
- #### 4. Configure MySQL
+ 4. Configure MySQL
  If you're using XAMPP and phpMyAdmin, start XAMPP and:
   1. Click Start on Apache and MySQL
   2. Go to http://localhost/phpmyadmin
@@ -71,28 +70,28 @@ A full-stack task management web app built with Angular and Laravel. Users can r
    DB_USERNAME=root
    DB_PASSWORD=          # (Leave empty if XAMPP root has no password)
  
- #### 5. Generate application key
- php artisan key:generate
+  5. Generate application key
+  php artisan key:generate
+  
+  6. Run database migrations
+  php artisan migrate
  
- #### 6. Run database migrations
- php artisan migrate
-
- #### 7. Serve the API (By default, Laravel will run at http://localhost:8000)
- php artisan serve
-
+  7. Serve the API (By default, Laravel will run at http://localhost:8000)
+  php artisan serve
+```
 
 
 ### 🎨 Frontend Setup
-
- #### 1. Go to the frontend folder
+```bash
+ 1. Go to the frontend folder
  cd frontend
  
- #### 2. Install Angular dependencies
+ 2. Install Angular dependencies
  npm install
  
- #### 3. Start the Angular development server (This will automatically open the app at http://localhost:4200)
+ 3. Start the Angular development server (This will automatically open the app at http://localhost:4200)
  ng serve --open
-
+```
 
 
 ### 🧪 API Routes
