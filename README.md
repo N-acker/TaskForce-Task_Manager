@@ -6,8 +6,8 @@ A full-stack task management web app built with Angular and Laravel. Users can r
 
 ## 🚀 Live Demo
 
-👉 [Try the app here](nathaniel-task-manager-app.netlify.app)  
-🔗 Backend API: (melodious-recreation-production.up.railway.app)
+- 🌐 **Frontend App:** [nathaniel-task-manager-app.netlify.app](https://nathaniel-task-manager-app.netlify.app)
+- 🔗 **Backend API:** [melodious-recreation-production.up.railway.app](https://melodious-recreation-production.up.railway.app)
 
 ---
 
