@@ -84,6 +84,7 @@ php artisan migrate
 # 7. Serve the API (By default, Laravel will run at http://localhost:8000)
 php artisan serve
 
+
 ### 🎨 Frontend Setup
 
 ```bash
@@ -95,6 +96,7 @@ npm install
 
 # 3. Start the Angular development server (This will automatically open the app at http://localhost:4200)
 ng serve --open
+
 
 ### 🧪 API Routes
 
