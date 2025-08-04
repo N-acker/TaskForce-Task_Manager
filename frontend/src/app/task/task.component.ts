@@ -22,6 +22,8 @@ export class TaskComponent {
   description: string ="";
   dueDate: string ="";
   currentTaskID = "";
+   private apiUrl = 'http://127.0.0.1:8000/api';
+  // private apiUrl = 'https://melodious-recreation-production.up.railway.app/api';
   
 constructor(private http: HttpClient, private auth: AuthService, private router: Router )
   {
@@ -31,7 +33,7 @@ constructor(private http: HttpClient, private auth: AuthService, private router:
   getAllTasks() {
   const headers = { Authorization: `Bearer ${this.auth.getToken()}` };
 
-  this.http.get("http://127.0.0.1:8000/api/task", { headers })
+  this.http.get(`${this.apiUrl}/task`, { headers })
     .subscribe((resultData: any) => {
       this.isResultLoaded = true;
       console.log(resultData);
@@ -49,7 +51,7 @@ constructor(private http: HttpClient, private auth: AuthService, private router:
 
     const headers = { Authorization: `Bearer ${this.auth.getToken()}` };
 
-    this.http.post("http://127.0.0.1:8000/api/task", bodyData, { headers })
+    this.http.post(`${this.apiUrl}/task`, bodyData, { headers })
       .subscribe((resultData: any) => {
         console.log(resultData);
         alert("Task Added Successfully");
@@ -79,7 +81,7 @@ constructor(private http: HttpClient, private auth: AuthService, private router:
 
     const headers = { Authorization: `Bearer ${this.auth.getToken()}` };
 
-    this.http.put(`http://127.0.0.1:8000/api/task/${this.currentTaskID}`, bodyData, { headers })
+    this.http.put(`${this.apiUrl}/task/${this.currentTaskID}`, bodyData, { headers })
       .subscribe((resultData: any) => {
         console.log(resultData);
         alert("Task Updated");
@@ -107,7 +109,7 @@ constructor(private http: HttpClient, private auth: AuthService, private router:
   setDelete(data: any) {
     const headers = { Authorization: `Bearer ${this.auth.getToken()}` };
 
-    this.http.delete(`http://127.0.0.1:8000/api/task/${data.id}`, { headers })
+    this.http.delete(`${this.apiUrl}/task/${data.id}`, { headers })
       .subscribe((resultData: any) => {
         console.log(resultData);
         alert("Task Deleted");
