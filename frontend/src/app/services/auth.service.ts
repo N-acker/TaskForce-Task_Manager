@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://127.0.0.1:8000/api';
-  // private apiUrl = 'https://melodious-recreation-production.up.railway.app/api';
+  // private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = 'https://taskforce-taskmanager-production.up.railway.app/api';
   private tokenKey = 'auth_token';
 
   constructor(private http: HttpClient) {}

@@ -22,8 +22,8 @@ export class TaskComponent {
   description: string ="";
   dueDate: string ="";
   currentTaskID = "";
-   private apiUrl = 'http://127.0.0.1:8000/api';
-  // private apiUrl = 'https://melodious-recreation-production.up.railway.app/api';
+  //  private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = 'https://taskforce-taskmanager-production.up.railway.app/api';
   
 constructor(private http: HttpClient, private auth: AuthService, private router: Router )
   {
