@@ -6,7 +6,7 @@ A full-stack task management web app built with Angular and Laravel. Users can r
 
 ## 🚀 Live Demo
 
-- 🔗 **Deployed App:** [taskforce-taskmanager-production.up.railway.app)
+- 🔗 Check out the live demo here: [TaskManager Live](taskforce-taskmanager-production.up.railway.app)
 
 ---
 
