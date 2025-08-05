@@ -19,23 +19,23 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# 1) Copy all Laravel code (so artisan exists)
-COPY backend/ . 
+# 1) Copy all Laravel code (including .env.example)
+COPY backend/ .
 
-# 2) Only now install Composer & your PHP deps
-COPY backend/composer.json backend/composer.lock .  
+# 2) Copy .env.example → .env so artisan has somewhere to write the key
+RUN cp .env.example .env
+
+# 3) Install Composer & your PHP deps
+COPY backend/composer.json backend/composer.lock ./
 RUN php -r "copy('https://getcomposer.org/installer','composer-setup.php');" \
  && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
  && composer install --no-dev --optimize-autoloader
 
-# 3) Copy your prerendered Angular build into public/
+# 4) Copy your prerendered Angular build into public/
 COPY --from=frontend-builder /app/frontend/dist/my-app/browser public
 
-# 4) Generate your APP_KEY
-RUN php artisan key:generate
+# 5) Generate your APP_KEY (now that .env exists)
+RUN php artisan key:generate --ansi
 
 EXPOSE 8080
-
-# 5) Serve the app
 CMD ["php","-S","0.0.0.0:8080","-t","public"]
-
