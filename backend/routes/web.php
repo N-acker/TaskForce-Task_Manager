@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Response;
 
-use Illuminate\Support\Facades\File;
+// any route that wasn’t matched above will fall back here
+Route::fallback(function () {
+    // serve the Angular index.html
+    return Response::file(public_path('index.html'));
+});
 
-Route::get('/{any}', function () {
-    return File::get(public_path('index.html'));
-})->where('any', '.*');
 
